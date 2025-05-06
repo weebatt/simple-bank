@@ -1,0 +1,18 @@
+default:
+  admin:
+    name: ${DEFAULT_ADMIN_NAME:admin}
+    email: ${DEFAULT_ADMIN_EMAIL:admin@example.com}
+    password: ${DEFAULT_ADMIN_PASSWORD:adminpassword}
+
+jwt:
+  secret: ${JWT_SECRET:SoaIZcqgrkYgxcF+fzib9X8FprwGoXV0BBLQbPIroyo=}
+  expiration: ${JWT_EXPIRATION:86400000}
+
+spring:
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    contexts: dev,prod
